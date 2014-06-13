@@ -1,0 +1,3 @@
+ERBstart _.forEach(<%= modelControllerNamePluralized %>, function(<%= modelControllerName %>) { ERBend
+    <%= compiledIndexTableData %>
+ERBstart }) ERBend

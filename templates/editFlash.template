@@ -1,0 +1,7 @@
+ERBstart if(flash && flash.err) { ERBend
+<ul class="alert alert-success">
+ERBstart Object.keys(flash.err).forEach(function(error) { ERBend
+<li><%- JSON.stringify(flash.err[error]) ERBend</li>
+ERBstart }) ERBend
+</ul>
+ERBstart } ERBend

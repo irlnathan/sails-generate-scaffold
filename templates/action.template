@@ -1,0 +1,96 @@
+
+  'new': function(req,res){
+    res.view();    
+  },
+
+  create: function(req, res) {
+
+    <%= compliledActionParamObject %>
+
+    // Create a User with the params sent from 
+    // the sign-up form --> new.ejs
+    <%= id %>.create(paramObj, function <%= modelControllerName %>Created(err, <%= modelControllerName %>) {
+
+      if (err) {
+        console.log(err);
+        req.session.flash = {
+          err: err
+        }
+        return res.redirect('/<%= modelControllerName %>/new');
+      }
+
+      // res.json(<%= modelControllerName %>);
+      res.redirect('/<%= modelControllerName %>/show/' + <%= modelControllerName %>.id);
+
+    });
+  },
+
+  show: function(req, res, next) {
+    <%= id %>.findOne(req.param('id'), function found<%= id %>(err, <%= modelControllerName %>) {
+      if (err) return next(err);
+      if (!<%= modelControllerName %>) return next();
+
+      // res.json(<%= modelControllerName %>);
+      res.view({
+        <%= modelControllerName %>: <%= modelControllerName %>
+      });
+    });
+  },
+
+  index: function(req, res, next) {
+    <%= id %>.find(function found<%= id %>s(err, <%= modelControllerName %>s) {
+      if (err) return next(err);
+      
+      res.view({
+        <%= modelControllerName %>s: <%= modelControllerName %>s
+      });
+    });
+  },
+
+  edit: function(req, res, next) {
+
+    <%= id %>.findOne(req.param('id'), function found<%= id %>(err, <%= modelControllerName %>) {
+      if (err) return next(err);
+      if (!<%= modelControllerName %>) return next('<%= modelControllerName %> doesn\'t exist.');
+
+      res.view({
+        <%= modelControllerName %>: <%= modelControllerName %>
+      });
+    });
+  },
+
+  update: function(req, res, next) {
+
+    <%=compliledActionUpdateParamObject %>
+
+    <%= id %>.update(req.param('id'), paramObj, function <%= modelControllerName %>Updated(err) {
+      if (err) {
+        console.log(err);
+
+        req.session.flash = {
+          err: err
+        }
+
+        return res.redirect('/<%= modelControllerName %>/edit/' + req.param('id'));
+      }
+
+      res.redirect('/<%= modelControllerName %>/show/' + req.param('id'));
+    });
+  },
+
+  destroy: function(req, res, next) {
+
+    <%= id %>.findOne(req.param('id'), function found<%= id %>(err, <%= modelControllerName %>) {
+      if (err) return next(err);
+
+      if (!<%= modelControllerName %>) return next('<%= id %> doesn\'t exist.');
+
+      <%= id %>.destroy(req.param('id'), function <%= modelControllerName %>Destroyed(err) {
+        if (err) return next(err);
+    });        
+
+      res.redirect('/<%= modelControllerName %>');
+
+    });
+  }
+ 

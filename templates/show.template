@@ -1,0 +1,9 @@
+<form class="show">
+	<div class="form-group">
+		<h2> a <%= modelControllerName %>... </h2>
+		<%= compiledShowFormFields %>
+</div>
+</div>
+<%= compiledShowEditLink %>
+<a href="/<%= modelControllerName %>">Back to list</a>
+</form>

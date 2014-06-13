@@ -1,0 +1,1 @@
+<a href="/<%= modelControllerName %>/show/ERBstart<%= modelControllerName %>.id ERBend" class="btn btn-danger">Cancel</a>

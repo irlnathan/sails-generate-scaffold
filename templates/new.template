@@ -1,0 +1,10 @@
+<form action="/<%= modelControllerName %>/create" method="POST" role="form" class="new">
+	<div class="form-group">
+	<h2>Create a <%= modelControllerName %></h2>
+
+<%= compiledNewFlash %>
+	<%= compiledNewFormFields %>
+	</div>
+	<input type="submit" value="Submit" class="btn btn-default"/> | 
+	<a href="/<%= modelControllerName %>">Back to list</a>
+</form>

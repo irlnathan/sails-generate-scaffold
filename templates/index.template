@@ -1,0 +1,9 @@
+<div class="container">
+	<h3><%= id %> Listing</h3>
+	<table class='table table-hover table-condensed'>
+	<%= compiledIndexTableHeadings %>
+	<%= compiledIndexForEach %>
+	</table>
+	<a href="/<%= modelControllerName%>/new/" class="btn btn-success btn-sm" role="button">New <%= id %></a> |
+	<a href="/">all spars</a>
+</div>

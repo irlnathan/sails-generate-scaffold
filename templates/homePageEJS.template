@@ -1,0 +1,5 @@
+ERBstart _.each(_.keys(sails.controllers), function(controller) { ERBend
+
+    <a href="/ERBstart= controller ERBend" class="btn btn-lg btn-success spar-list">ERBstart= controller ERBend</a>
+
+    ERBstart }) ERBend

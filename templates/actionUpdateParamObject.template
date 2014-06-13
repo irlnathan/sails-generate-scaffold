@@ -1,0 +1,5 @@
+var paramObj = {
+<% _.forEach(modelAttributeNames, function (name) { %>
+      <%= name %>: req.param('<%= name %>'),
+<% }) %>
+    }

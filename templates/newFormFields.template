@@ -1,0 +1,5 @@
+<% _.forEach(modelAttributeNames, function (name) { %>
+	<div class="control-group" style = "width: 300px;">
+	<input type="text" class="form-control" placeholder="<%= name %>" name="<%= name %>">
+	</div>
+<% }) %>

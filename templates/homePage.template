@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>My Scaffolds</h1>
+
+    <h2>...your scaffolds are just a click away.</h2>
+    <%= compliledHomePageEJS %>
+  </div>
+</div>

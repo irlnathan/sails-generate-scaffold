@@ -1,0 +1,33 @@
+{
+  "name": "sails-generate-scaffold",
+  "version": "0.0.3",
+  "description": "sails generate scaffold",
+  "main": "Generator.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "scaffold",
+    "generator",
+    "sails",
+    "generate",
+    "plugin"
+  ],
+  "author": "Irl Nathan",
+  "license": "MIT",
+  "dependencies": {
+  	"lodash": ">=2.4.x",
+  	"merge-defaults": ">=0.1.0",
+    "underscore.string": "^2.3.3"
+  },
+  "devDependencies": {
+    "sails-generate": "*",
+    "reportback": "*",
+    "fs-extra": "*"
+  },
+  "sailsGenerator": {
+    "type": "scaffold",
+    "behavior": "overrides `sails generate scaffold`",
+    "sailsVersion": "~0.10.0"
+  }
+}

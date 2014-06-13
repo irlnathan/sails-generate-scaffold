@@ -1,0 +1,10 @@
+	<%= compiledEditFormAction %>
+		<h2> editing a <%= modelControllerName %>... </h2>
+		<%= compiledEditFlash %>
+		<%= compiledEditFormFields %>
+		</div>
+		<input type="submit" value="Update <%= id %>" class="btn btn-default"/>
+		<%= compiledEditShowLink %>
+	</form>
+	
+	
