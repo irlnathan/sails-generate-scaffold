@@ -5,5 +5,5 @@
 	<%= compiledIndexForEach %>
 	</table>
 	<a href="/<%= modelControllerName%>/new/" class="btn btn-success btn-sm" role="button">New <%= id %></a> |
-	<a href="/">all spars</a>
+	<a href="/">all scaffolds</a>
 </div>
