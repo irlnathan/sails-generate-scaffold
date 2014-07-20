@@ -444,7 +444,7 @@ module.exports = {
 
    './assets/styles/custom.css': {template: {templatePath: 'customCSS.template', force: true } },
 
-   './assets/styles/bootstrapSpar.css': {template: {templatePath: 'bootstrapSparCSS.template', force: true } },  
+   './assets/styles/bootstrapScaffold.css': {template: {templatePath: 'bootstrapScaffoldCSS.template', force: true } },  
 
    './views/homepage.ejs': {template: {templatePath: 'homePage.template', force: true } }, 
 
