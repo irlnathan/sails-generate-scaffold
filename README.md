@@ -1,6 +1,8 @@
 # sails-generate-scaffold
 
-A `scaffold` generator for use with the Sails command-line interface.  A `scaffold` generates a scaffold of a sails project.  The scaffold consists of a user model, a controller with index, new, create, edit, update, and destroy actions, as well as the associated views.  The `scaffold` generator will also create a policy that enables flash messages for errors on the new and edit views.  
+###**Note:** This module requires Sails **v0.10.0-rc8** or higher.
+
+A `scaffold` generator for use with the Sails command-line interface.  A `scaffold` generates a rudimentary model, CRUD controller actions (e.g. index, new, create, edit, update, and destroy), and corresponding views of a Sails project.   The `scaffold` generator will also create a policy that enables flash messages for errors on the new and edit views. 
 
 ### To install:
 
