@@ -1,14 +1,16 @@
 {
-  "name": "sails-generate-scaffold",
-  "version": "0.0.5",
-  "description": "sails generate scaffold",
-  "main": "Generator.js",
+  "name": "sails-scaffolding",
+  "version": "0.1.0",
+  "description": "Generate sails.js scaffolding views",
+  "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "keywords": [
-    "scaffold",
+    "sails.js",
+    "scaffolding",
     "generator",
+    "scaffold",
     "sails",
     "generate",
     "plugin"
