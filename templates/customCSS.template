@@ -3,7 +3,7 @@ form.edit {
 	padding: 50px; 
 	width: 500px; 
 	border-style: solid;
-    border-width: 2px;"
+  border-width: 2px;
 }
 
 form.show {
@@ -11,7 +11,7 @@ form.show {
 	padding: 50px; 
 	width: 500px; 
 	border-style: solid;
-    border-width: 2px;"
+  border-width: 2px;
 }
 
 form.new {
@@ -19,5 +19,9 @@ form.new {
 	padding: 50px; 
 	width: 500px; 
 	border-style: solid;
-    border-width: 2px;"
+  border-width: 2px;
+}
+
+.btn {
+  margin: 4px;
 }
