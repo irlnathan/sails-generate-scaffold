@@ -29,13 +29,15 @@ module.exports = {
    */
   before: function (scope, cb) {
 
+    var id = scope.args[0];
+
     // scope.args are the raw command line arguments.
     //
     // e.g. if someone runs:
     // $ sails generate scaffold user find create update
     // then `scope.args` would be `['user', 'find', 'create', 'update']`
-    if (!scope.args[0]) {
-      return cb( new TypeError('Please provide a name for this scaffold.') );
+    if (_.isEmpty(id)) {
+      return cb(new TypeError('Please provide a name for this model'));
     }
 
     // scope.rootPath is the base path for this generator
@@ -46,14 +48,15 @@ module.exports = {
     // And someone ran this generator from `/Users/dbowie/sailsStuff`,
     // then `/Users/dbowie/sailsStuff/Foobar.md` would be created.
     if (!scope.rootPath) {
-      return cb(INVALID_SCOPE_VARIABLE('rootPath') );
+      return cb(INVALID_SCOPE_VARIABLE('rootPath'));
     }
 
     // Attach defaults
     _.defaults(scope, {
 
       // $sails generate scaffold user  --> id returns User
-      id: scope.args,
+      id: id.charAt(0).toUpperCase() + id.slice(1),
+      name: id,
 
       // $sails generate scaffold user  --> modelControllerName returns user
       modelControllerName: scope.args[0],
@@ -104,10 +107,10 @@ module.exports = {
     './assets/styles/bootstrapScaffold.css': {template: {templatePath: 'bootstrapScaffoldCSS.template', force: true } },
 
     './views/homepage.ejs': {template: {templatePath: 'homePage.template', force: true } }, 
-    './views/:id/new.ejs': {template: {templatePath: 'new.template', force: true } },
-    './views/:id/show.ejs': {template: {templatePath: 'show.template', force: true } },
-    './views/:id/index.ejs': {template: {templatePath: 'index.template', force: true } },
-    './views/:id/edit.ejs': {template: {templatePath: 'edit.template', force: true } },
+    './views/:name/new.ejs': {template: {templatePath: 'new.template', force: true } },
+    './views/:name/show.ejs': {template: {templatePath: 'show.template', force: true } },
+    './views/:name/index.ejs': {template: {templatePath: 'index.template', force: true } },
+    './views/:name/edit.ejs': {template: {templatePath: 'edit.template', force: true } },
 
     './api/policies/flash.js': {template: {templatePath: 'flashPolicy.template', force: true} },
 
