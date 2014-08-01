@@ -120,7 +120,7 @@ module.exports = {
    *
    * @type {String}
    */
-  templatesDirectory: require('path').resolve(__dirname, './templates')
+  templatesDirectory: path.resolve(__dirname, './templates')
 };
 
 /**
@@ -139,7 +139,7 @@ module.exports = {
 
 function INVALID_SCOPE_VARIABLE (varname, details, message) {
   var DEFAULT_MESSAGE = [
-    'Issue encountered in generator "scaffold":',
+    'Issue encountered in generator "scaffolding":',
     'Missing required scope variable: `%s`',
     'If you are the author of `sails-scaffolding`, please resolve this issue and publish a new patch release.'
   ].join('\n');
