@@ -5,7 +5,7 @@
 
   create: function(req, res) {
 
-    <%= compliledActionParamObject %>
+    <%= compiledActionParamObject %>
 
     // Create a User with the params sent from 
     // the sign-up form --> new.ejs
@@ -61,7 +61,7 @@
 
   update: function(req, res, next) {
 
-    <%=compliledActionUpdateParamObject %>
+    <%=compiledActionUpdateParamObject %>
 
     <%= id %>.update(req.param('id'), paramObj, function <%= modelControllerName %>Updated(err) {
       if (err) {

@@ -72,15 +72,15 @@ module.exports = {
     var HOMEPAGE_EJS_TEMPLATE = path.resolve(__dirname, './templates/homePageEJS.template');
     HOMEPAGE_EJS_TEMPLATE = fs.readFileSync(HOMEPAGE_EJS_TEMPLATE, 'utf8');
 
-    var compliledHomePageEJS = _.template(HOMEPAGE_EJS_TEMPLATE, {});  
+    var compiledHomePageEJS = _.template(HOMEPAGE_EJS_TEMPLATE, {});  
 
     // This puts erb style delimeters 
-    compliledHomePageEJS = compliledHomePageEJS.replace(/ERBstart=/g, '<%=');
-    compliledHomePageEJS = compliledHomePageEJS.replace(/ERBstart/g, '<%');
-    compliledHomePageEJS = compliledHomePageEJS.replace(/ERBend/g, '%>');
+    compiledHomePageEJS = compiledHomePageEJS.replace(/ERBstart=/g, '<%=');
+    compiledHomePageEJS = compiledHomePageEJS.replace(/ERBstart/g, '<%');
+    compiledHomePageEJS = compiledHomePageEJS.replace(/ERBend/g, '%>');
 
     _.defaults(scope, {
-      compliledHomePageEJS: compliledHomePageEJS
+      compiledHomePageEJS: compiledHomePageEJS
     });   
 
     // When finished, we trigger a callback with no error
@@ -136,7 +136,6 @@ module.exports = {
  * @return {Error}
  * @api private
  */
-
 function INVALID_SCOPE_VARIABLE (varname, details, message) {
   var DEFAULT_MESSAGE = [
     'Issue encountered in generator "scaffolding":',
