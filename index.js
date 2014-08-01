@@ -59,47 +59,8 @@ module.exports = {
       // $sails generate scaffold user  --> modelControllerName returns user
       modelControllerName: scope.args[0],
 
-      actions: [],
-
-      // $sails generate scaffold user  name:string email:email --> scope.args.slice(1) returns ['name:string','email:email']
-      attributes: scope.args.slice(1)
+      actions: []
     });
-
-    //Get the optional model attributes and validate them
-    var attributes = scope.attributes;
-    var invalidAttributes = [];
-
-    attributes = _.map(attributes, function(attribute, i) {
-
-      var parts = attribute.split(':');
-
-      if (parts[1] === undefined) parts[1] = 'string';
-
-      // Handle invalidAttributes
-      if (!parts[1] || !parts[0]) {
-        invalidAttributes.push(
-          'Invalid attribute notation:   "' + attribute + '"');
-        return;
-      }
-      return {
-        name: parts[0],
-        type: parts[1]
-      };
-
-    });
-
-    // Add the optional model attributes to the scope
-    _.defaults(scope, {
-      modelAttributes: attributes
-    });
-
-    // Pluck just the name values
-    var modelAttributeNames = _.pluck(scope.modelAttributes, 'name');
-
-    // Add the optional model attribute names to the scope
-    _.defaults(scope, {
-      modelAttributeNames: modelAttributeNames
-    });   
 
     lib.indexViewTemplate.generate(scope);
     lib.newViewTemplate.generate(scope);
