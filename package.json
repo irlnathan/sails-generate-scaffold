@@ -1,14 +1,17 @@
 {
-  "name": "sails-generate-scaffold",
-  "version": "0.0.5",
-  "description": "sails generate scaffold",
-  "main": "Generator.js",
+  "name": "sails-scaffolding",
+  "version": "0.1.0",
+  "description": "Generate sails.js scaffolding views",
+  "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "postinstall": "node install.js"
   },
   "keywords": [
-    "scaffold",
+    "sails.js",
+    "scaffolding",
     "generator",
+    "scaffold",
     "sails",
     "generate",
     "plugin"
@@ -16,17 +19,12 @@
   "author": "Irl Nathan",
   "license": "MIT",
   "dependencies": {
-  	"lodash": ">=2.4.x",
-  	"merge-defaults": ">=0.1.0",
-    "underscore.string": "^2.3.3"
-  },
-  "devDependencies": {
-    "sails-generate": "*",
-    "reportback": "*",
-    "fs-extra": "*"
+    "lodash": "^2.4.1",
+    "merge-defaults": ">=0.1.0",
+    "npmlog": "^0.1.1"
   },
   "sailsGenerator": {
-    "type": "scaffold",
+    "type": "scaffolding",
     "behavior": "overrides `sails generate scaffold`",
     "sailsVersion": "~0.10.0"
   }
