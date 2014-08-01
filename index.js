@@ -1,7 +1,3 @@
-/**
- * Module dependencies
- */
-
 var lib = require('./lib');
 var util = require('util');
 var _ = require('lodash');
@@ -11,10 +7,10 @@ _.defaults = require('merge-defaults');
 _.str = require('underscore.string');
 
 /**
- * sails-generate-scaffold
+ * sails-scaffolding
  *
  * Usage:
- * `sails generate scaffold`
+ * `sails generate scaffolding`
  *
  * @description Generates a scaffold
  * @help See http://links.sailsjs.org/docs/generators
@@ -40,7 +36,7 @@ module.exports = {
     // $ sails generate scaffold user find create update
     // then `scope.args` would be `['user', 'find', 'create', 'update']`
     if (!scope.args[0]) {
-      return cb( new Error('Please provide a name for this scaffold.') );
+      return cb( new TypeError('Please provide a name for this scaffold.') );
     }
 
     // scope.rootPath is the base path for this generator
