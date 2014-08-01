@@ -4,7 +4,6 @@ var _ = require('lodash');
 var fs = require('fs');
 var path = require('path');
 _.defaults = require('merge-defaults');
-_.str = require('underscore.string');
 
 /**
  * sails-scaffolding
@@ -54,7 +53,7 @@ module.exports = {
     _.defaults(scope, {
 
       // $sails generate scaffold user  --> id returns User
-      id: _.str.capitalize(scope.args[0]),
+      id: scope.args,
 
       // $sails generate scaffold user  --> modelControllerName returns user
       modelControllerName: scope.args[0],
@@ -102,7 +101,7 @@ module.exports = {
     './': ['model', 'controller'],
 
     './assets/styles/custom.css': {template: {templatePath: 'customCSS.template', force: true } },
-    './assets/styles/bootstrapScaffold.css': {template: {templatePath: 'bootstrapScaffoldCSS.template', force: true } },  
+    './assets/styles/bootstrapScaffold.css': {template: {templatePath: 'bootstrapScaffoldCSS.template', force: true } },
 
     './views/homepage.ejs': {template: {templatePath: 'homePage.template', force: true } }, 
     './views/:id/new.ejs': {template: {templatePath: 'new.template', force: true } },
