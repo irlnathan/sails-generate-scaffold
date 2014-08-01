@@ -75,9 +75,10 @@ module.exports = {
     var compiledHomePageEJS = _.template(HOMEPAGE_EJS_TEMPLATE, {});  
 
     // This puts erb style delimeters 
-    compiledHomePageEJS = compiledHomePageEJS.replace(/ERBstart=/g, '<%=');
-    compiledHomePageEJS = compiledHomePageEJS.replace(/ERBstart/g, '<%');
-    compiledHomePageEJS = compiledHomePageEJS.replace(/ERBend/g, '%>');
+    compiledHomePageEJS = compiledHomePageEJS
+      .replace(/ERBstart=/g, '<%=')
+      .replace(/ERBstart/g, '<%')
+      .replace(/ERBend/g, '%>');
 
     _.defaults(scope, {
       compiledHomePageEJS: compiledHomePageEJS
