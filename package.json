@@ -19,8 +19,9 @@
   "author": "Irl Nathan",
   "license": "MIT",
   "dependencies": {
-  	"lodash": ">=2.4.x",
-  	"merge-defaults": ">=0.1.0"
+    "lodash": ">=2.4.x",
+    "merge-defaults": ">=0.1.0",
+    "npmlog": "^0.1.1"
   },
   "devDependencies": {
     "sails-generate": "*"
