@@ -4,7 +4,8 @@
   "description": "Generate sails.js scaffolding views",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "postinstall": "node install.js"
   },
   "keywords": [
     "sails.js",
@@ -22,12 +23,10 @@
   	"merge-defaults": ">=0.1.0"
   },
   "devDependencies": {
-    "sails-generate": "*",
-    "reportback": "*",
-    "fs-extra": "*"
+    "sails-generate": "*"
   },
   "sailsGenerator": {
-    "type": "scaffold",
+    "type": "scaffolding",
     "behavior": "overrides `sails generate scaffold`",
     "sailsVersion": "~0.10.0"
   }
