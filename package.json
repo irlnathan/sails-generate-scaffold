@@ -3,6 +3,10 @@
   "version": "0.0.5",
   "description": "sails generate scaffold",
   "main": "Generator.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:irlnathan/sails-generate-scaffold.git"
+  },
   "scripts": {
     "test": "mocha"
   },
