@@ -9,6 +9,11 @@ var path = require('path');
 _.defaults = require('merge-defaults');
 _.str = require('underscore.string');
 
+_.pluck = require('underscore');
+my_template = _.template;
+_.template = function(arg1, arg2) {
+    return my_template(arg1)(arg2);
+}
 
 /**
  * sails-generate-scaffold
