@@ -99,25 +99,25 @@ module.exports = {
     });
 
     // Pluck just the name values
-    var modelAttributeNames = _.pluck(scope.modelAttributes, 'name');
+    var modelAttributeNames = _.map(scope.modelAttributes, 'name');
 
     // Add the optional model attribute names to the scope
     _.defaults(scope, {
       modelAttributeNames: modelAttributeNames
-    });   
+    });
 
 /**
 
-                    __      ___            _______                   _       _       
-                    \ \    / (_)          |__   __|                 | |     | |      
-  _ __   _____      _\ \  / / _  _____      _| | ___ _ __ ___  _ __ | | __ _| |_ ___ 
+                    __      ___            _______                   _       _
+                    \ \    / (_)          |__   __|                 | |     | |
+  _ __   _____      _\ \  / / _  _____      _| | ___ _ __ ___  _ __ | | __ _| |_ ___
  | '_ \ / _ \ \ /\ / /\ \/ / | |/ _ \ \ /\ / / |/ _ \ '_ ` _ \| '_ \| |/ _` | __/ _ \
  | | | |  __/\ V  V /  \  /  | |  __/\ V  V /| |  __/ | | | | | |_) | | (_| | ||  __/
  |_| |_|\___| \_/\_/    \/   |_|\___| \_/\_/ |_|\___|_| |_| |_| .__/|_|\__,_|\__\___|
-                                                              | |                    
-                                                              |_|                    
+                                                              | |
+                                                              |_|
 
-**/                                          
+**/
 
     // This generates a template using the newFormFields.template located in scaffold/templates
     // combined with modelAttributeNames to produce form fields for the new view derived from the model attributes
@@ -133,11 +133,11 @@ module.exports = {
     // Add the compiled new form fields to the scope
     _.defaults(scope, {
       compiledNewFormFields: compiledNewFormFields
-    });    
+    });
 
     //This generates a template using newFlash.template
     var NEW_FLASH_TEMPLATE = path.resolve(__dirname, './templates/newFlash.template');
-    NEW_FLASH_TEMPLATE = fs.readFileSync(NEW_FLASH_TEMPLATE, 'utf8'); 
+    NEW_FLASH_TEMPLATE = fs.readFileSync(NEW_FLASH_TEMPLATE, 'utf8');
 
     var compiledNewFlash = _.template(NEW_FLASH_TEMPLATE, {
       modelAttributeNames: scope.modelAttributeNames,
@@ -145,7 +145,7 @@ module.exports = {
       modelControllerName: scope.modelControllerName
     })
 
-    // This puts erb style delimeters 
+    // This puts erb style delimeters
     compiledNewFlash = compiledNewFlash.replace(/ERBstart/g, '<%')
     compiledNewFlash = compiledNewFlash.replace(/ERBend/g, '%>')
 
@@ -156,15 +156,15 @@ module.exports = {
 
 /**
 
-      _                 __      ___            _______                   _       _       
-     | |                \ \    / (_)          |__   __|                 | |     | |      
-  ___| |__   _____      _\ \  / / _  _____      _| | ___ _ __ ___  _ __ | | __ _| |_ ___ 
+      _                 __      ___            _______                   _       _
+     | |                \ \    / (_)          |__   __|                 | |     | |
+  ___| |__   _____      _\ \  / / _  _____      _| | ___ _ __ ___  _ __ | | __ _| |_ ___
  / __| '_ \ / _ \ \ /\ / /\ \/ / | |/ _ \ \ /\ / / |/ _ \ '_ ` _ \| '_ \| |/ _` | __/ _ \
  \__ \ | | | (_) \ V  V /  \  /  | |  __/\ V  V /| |  __/ | | | | | |_) | | (_| | ||  __/
  |___/_| |_|\___/ \_/\_/    \/   |_|\___| \_/\_/ |_|\___|_| |_| |_| .__/|_|\__,_|\__\___|
-                                                                  | |                    
-                                                                  |_|                    
-**/     
+                                                                  | |
+                                                                  |_|
+**/
 
 
     // This generates a template using the showFormFields.template located in scaffold/templates
@@ -178,14 +178,14 @@ module.exports = {
       modelControllerName: scope.modelControllerName
     })
 
-    // This puts erb style delimeters 
+    // This puts erb style delimeters
     compiledShowFormFields = compiledShowFormFields.replace(/ERBstart/g, '<%=')
     compiledShowFormFields = compiledShowFormFields.replace(/ERBend/g, '%>')
 
     // Add the compiled show form fields to the scope
     _.defaults(scope, {
       compiledShowFormFields: compiledShowFormFields
-    }); 
+    });
 
     // This generates a template using the showEditLink.template located in scaffold/templates
     var SHOW_EDIT_LINK_TEMPLATE = path.resolve(__dirname, './templates/showEditLink.template');
@@ -197,7 +197,7 @@ module.exports = {
       modelControllerName: scope.modelControllerName
     })
 
-    // This puts erb style delimeters 
+    // This puts erb style delimeters
     compiledShowEditLink = compiledShowEditLink.replace(/ERBstart/g, '<%=')
     compiledShowEditLink = compiledShowEditLink.replace(/ERBend/g, '%>')
 
@@ -207,15 +207,15 @@ module.exports = {
 
 /**
 
-  _           _         __      ___            _______                   _       _       
- (_)         | |        \ \    / (_)          |__   __|                 | |     | |      
-  _ _ __   __| | _____  _\ \  / / _  _____      _| | ___ _ __ ___  _ __ | | __ _| |_ ___ 
+  _           _         __      ___            _______                   _       _
+ (_)         | |        \ \    / (_)          |__   __|                 | |     | |
+  _ _ __   __| | _____  _\ \  / / _  _____      _| | ___ _ __ ___  _ __ | | __ _| |_ ___
  | | '_ \ / _` |/ _ \ \/ /\ \/ / | |/ _ \ \ /\ / / |/ _ \ '_ ` _ \| '_ \| |/ _` | __/ _ \
  | | | | | (_| |  __/>  <  \  /  | |  __/\ V  V /| |  __/ | | | | | |_) | | (_| | ||  __/
  |_|_| |_|\__,_|\___/_/\_\  \/   |_|\___| \_/\_/ |_|\___|_| |_| |_| .__/|_|\__,_|\__\___|
-                                                                  | |                    
-                                                                  |_|                                        
-**/ 
+                                                                  | |
+                                                                  |_|
+**/
 
     // This generates the table index headings using indexTableHeadings.template located in scaffold/templates
     var INDEX_TABLE_HEADINGS_TEMPLATE = path.resolve(__dirname, './templates/indexTableHeadings.template');
@@ -246,16 +246,16 @@ module.exports = {
 
     _.defaults(scope, {
         modelControllerNamePluralized: scope.modelControllerName + 's'
-    }); 
+    });
 
-    // This puts erb style delimeters 
+    // This puts erb style delimeters
     compiledIndexTableData = compiledIndexTableData.replace(/ERBstart/g, '<%=')
     compiledIndexTableData = compiledIndexTableData.replace(/ERBend/g, '%>')
 
     // Add the compiled show form fields to the scope
     _.defaults(scope, {
       compiledIndexTableData: compiledIndexTableData
-    }); 
+    });
 
     // This generates the indexForEach template
     var INDEX_FOR_EACH_TEMPLATE = path.resolve(__dirname, './templates/indexForEach.template');
@@ -267,7 +267,7 @@ module.exports = {
       modelControllerName: scope.modelControllerName
     });
 
-    // This puts erb style delimeters 
+    // This puts erb style delimeters
     compiledIndexForEach = compiledIndexForEach.replace(/ERBstart/g, '<%')
     compiledIndexForEach = compiledIndexForEach.replace(/ERBend/g, '%>')
 
@@ -277,16 +277,16 @@ module.exports = {
 
 /**
 
-           _ _ ___      ___            _______                   _       _       
-          | (_) \ \    / (_)          |__   __|                 | |     | |      
-   ___  __| |_| |\ \  / / _  _____      _| | ___ _ __ ___  _ __ | | __ _| |_ ___ 
+           _ _ ___      ___            _______                   _       _
+          | (_) \ \    / (_)          |__   __|                 | |     | |
+   ___  __| |_| |\ \  / / _  _____      _| | ___ _ __ ___  _ __ | | __ _| |_ ___
   / _ \/ _` | | __\ \/ / | |/ _ \ \ /\ / / |/ _ \ '_ ` _ \| '_ \| |/ _` | __/ _ \
  |  __/ (_| | | |_ \  /  | |  __/\ V  V /| |  __/ | | | | | |_) | | (_| | ||  __/
   \___|\__,_|_|\__| \/   |_|\___| \_/\_/ |_|\___|_| |_| |_| .__/|_|\__,_|\__\___|
-                                                          | |                    
-                                                          |_|                    
+                                                          | |
+                                                          |_|
 
-**/ 
+**/
 
     // This generates the editFormFields template
     var EDIT_FORM_FIELDS_TEMPLATE = path.resolve(__dirname, './templates/editFormFields.template');
@@ -297,7 +297,7 @@ module.exports = {
       modelControllerName: scope.modelControllerName
     });
 
-    // This puts erb style delimeters 
+    // This puts erb style delimeters
     compiledEditFormFields = compiledEditFormFields.replace(/ERBstart/g, '<%=')
     compiledEditFormFields = compiledEditFormFields.replace(/ERBend/g, '%>')
 
@@ -307,7 +307,7 @@ module.exports = {
 
     //This generates a template using editFlash.template
     var EDIT_FLASH_TEMPLATE = path.resolve(__dirname, './templates/editFlash.template');
-    EDIT_FLASH_TEMPLATE = fs.readFileSync(EDIT_FLASH_TEMPLATE, 'utf8'); 
+    EDIT_FLASH_TEMPLATE = fs.readFileSync(EDIT_FLASH_TEMPLATE, 'utf8');
 
     var compiledEditFlash = _.template(EDIT_FLASH_TEMPLATE, {
       modelAttributeNames: scope.modelAttributeNames,
@@ -315,7 +315,7 @@ module.exports = {
       modelControllerName: scope.modelControllerName
     })
 
-    // This puts erb style delimeters 
+    // This puts erb style delimeters
     compiledEditFlash = compiledEditFlash.replace(/ERBstart/g, '<%')
     compiledEditFlash = compiledEditFlash.replace(/ERBend/g, '%>')
 
@@ -333,13 +333,13 @@ module.exports = {
       modelControllerName: scope.modelControllerName
     });
 
-    // This puts erb style delimeters 
+    // This puts erb style delimeters
     compiledEditFormAction = compiledEditFormAction.replace(/ERBstart/g, '<%=')
     compiledEditFormAction = compiledEditFormAction.replace(/ERBend/g, '%>')
 
     _.defaults(scope, {
       compiledEditFormAction: compiledEditFormAction
-    }); 
+    });
 
     // This generates a template using the editShowLink.template located in scaffold/templates
     var EDIT_SHOW_LINK_TEMPLATE = path.resolve(__dirname, './templates/editShowLink.template');
@@ -351,24 +351,24 @@ module.exports = {
       modelControllerName: scope.modelControllerName
     })
 
-    // This puts erb style delimeters 
+    // This puts erb style delimeters
     compiledEditShowLink = compiledEditShowLink.replace(/ERBstart/g, '<%=')
     compiledEditShowLink = compiledEditShowLink.replace(/ERBend/g, '%>')
 
     _.defaults(scope, {
       compiledEditShowLink: compiledEditShowLink
-    });  
+    });
 
 /**
-             _   _          _______                   _       _       
-            | | (_)        |__   __|                 | |     | |      
-   __ _  ___| |_ _  ___  _ __ | | ___ _ __ ___  _ __ | | __ _| |_ ___ 
+             _   _          _______                   _       _
+            | | (_)        |__   __|                 | |     | |
+   __ _  ___| |_ _  ___  _ __ | | ___ _ __ ___  _ __ | | __ _| |_ ___
   / _` |/ __| __| |/ _ \| '_ \| |/ _ \ '_ ` _ \| '_ \| |/ _` | __/ _ \
  | (_| | (__| |_| | (_) | | | | |  __/ | | | | | |_) | | (_| | ||  __/
   \__,_|\___|\__|_|\___/|_| |_|_|\___|_| |_| |_| .__/|_|\__,_|\__\___|
-                                               | |                    
-                                               |_|                                                                                            
-**/  
+                                               | |
+                                               |_|
+**/
 
     // This generates a template using the actionParamObject.template located in scaffold/templates
     // to produce a the params to include.
@@ -379,7 +379,7 @@ module.exports = {
         modelAttributeNames: scope.modelAttributeNames,
         id: scope.id,
         modelControllerName: scope.modelControllerName
-    })  
+    })
 
     // This generates a template using the actionUpdateParamObject.template
     var ACTION_UPDATE_PARAM_OBJECT_TEMPLATE = path.resolve(__dirname, './templates/actionUpdateParamObject.template');
@@ -389,9 +389,9 @@ module.exports = {
         modelAttributeNames: scope.modelAttributeNames,
         id: scope.id,
         modelControllerName: scope.modelControllerName
-    }) 
+    })
 
-    
+
     // This generates a template using the action.template located in scaffold/templates
     // combined with CRUD actions to produce a controller.
     var ACTION_TEMPLATE = path.resolve(__dirname, './templates/action.template');
@@ -410,16 +410,16 @@ module.exports = {
     var HOMEPAGE_EJS_TEMPLATE = path.resolve(__dirname, './templates/homePageEJS.template');
     HOMEPAGE_EJS_TEMPLATE = fs.readFileSync(HOMEPAGE_EJS_TEMPLATE, 'utf8');
 
-    var compliledHomePageEJS = _.template(HOMEPAGE_EJS_TEMPLATE, {});  
+    var compliledHomePageEJS = _.template(HOMEPAGE_EJS_TEMPLATE, {});
 
-    // This puts erb style delimeters 
+    // This puts erb style delimeters
     compliledHomePageEJS = compliledHomePageEJS.replace(/ERBstart=/g, '<%=')
     compliledHomePageEJS = compliledHomePageEJS.replace(/ERBstart/g, '<%')
     compliledHomePageEJS = compliledHomePageEJS.replace(/ERBend/g, '%>')
 
     _.defaults(scope, {
       compliledHomePageEJS: compliledHomePageEJS
-    });   
+    });
 
     // When finished, we trigger a callback with no error
     // to begin generating files/folders as specified by
@@ -444,9 +444,9 @@ module.exports = {
 
    './assets/styles/custom.css': {template: {templatePath: 'customCSS.template', force: true } },
 
-   './assets/styles/bootstrapScaffold.css': {template: {templatePath: 'bootstrapScaffoldCSS.template', force: true } },  
+   './assets/styles/bootstrapScaffold.css': {template: {templatePath: 'bootstrapScaffoldCSS.template', force: true } },
 
-   './views/homepage.ejs': {template: {templatePath: 'homePage.template', force: true } }, 
+   './views/homepage.ejs': {template: {templatePath: 'homePage.template', force: true } },
 
     './views/:id/new.ejs': {template: {templatePath: 'new.template', force: true } },
 
@@ -458,7 +458,7 @@ module.exports = {
 
     './api/policies/flash.js': {template: {templatePath: 'flashPolicy.template', force: true} },
 
-    './config/scaffold-policies.js': {template: {templatePath: 'policies.template', force: true} }    
+    './config/scaffold-policies.js': {template: {templatePath: 'policies.template', force: true} }
 
 
   },
