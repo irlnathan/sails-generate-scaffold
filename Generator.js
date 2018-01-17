@@ -124,7 +124,7 @@ module.exports = {
     var NEW_FORM_FIELDS_TEMPLATE = path.resolve(__dirname, './templates/newFormFields.template');
     NEW_FORM_FIELDS_TEMPLATE = fs.readFileSync(NEW_FORM_FIELDS_TEMPLATE, 'utf8');
 
-    var compiledNewFormFields = _.template(NEW_FORM_FIELDS_TEMPLATE, {
+    var compiledNewFormFields = _.template(NEW_FORM_FIELDS_TEMPLATE)({
       modelAttributeNames: scope.modelAttributeNames,
       id: scope.id,
       modelControllerName: scope.modelControllerName
@@ -139,7 +139,7 @@ module.exports = {
     var NEW_FLASH_TEMPLATE = path.resolve(__dirname, './templates/newFlash.template');
     NEW_FLASH_TEMPLATE = fs.readFileSync(NEW_FLASH_TEMPLATE, 'utf8');
 
-    var compiledNewFlash = _.template(NEW_FLASH_TEMPLATE, {
+    var compiledNewFlash = _.template(NEW_FLASH_TEMPLATE)({
       modelAttributeNames: scope.modelAttributeNames,
       id: scope.id,
       modelControllerName: scope.modelControllerName
@@ -172,7 +172,7 @@ module.exports = {
     var SHOW_FORM_FIELDS_TEMPLATE = path.resolve(__dirname, './templates/showFormFields.template');
     SHOW_FORM_FIELDS_TEMPLATE = fs.readFileSync(SHOW_FORM_FIELDS_TEMPLATE, 'utf8');
 
-    var compiledShowFormFields = _.template(SHOW_FORM_FIELDS_TEMPLATE, {
+    var compiledShowFormFields = _.template(SHOW_FORM_FIELDS_TEMPLATE)({
       modelAttributeNames: scope.modelAttributeNames,
       id: scope.id,
       modelControllerName: scope.modelControllerName
@@ -191,7 +191,7 @@ module.exports = {
     var SHOW_EDIT_LINK_TEMPLATE = path.resolve(__dirname, './templates/showEditLink.template');
     SHOW_EDIT_LINK_TEMPLATE = fs.readFileSync(SHOW_EDIT_LINK_TEMPLATE, 'utf8');
 
-    var compiledShowEditLink = _.template(SHOW_EDIT_LINK_TEMPLATE, {
+    var compiledShowEditLink = _.template(SHOW_EDIT_LINK_TEMPLATE)({
       modelAttributeNames: scope.modelAttributeNames,
       id: scope.id,
       modelControllerName: scope.modelControllerName
@@ -221,7 +221,7 @@ module.exports = {
     var INDEX_TABLE_HEADINGS_TEMPLATE = path.resolve(__dirname, './templates/indexTableHeadings.template');
     INDEX_TABLE_HEADINGS_TEMPLATE = fs.readFileSync(INDEX_TABLE_HEADINGS_TEMPLATE, 'utf8');
 
-    var compiledIndexTableHeadings = _.template(INDEX_TABLE_HEADINGS_TEMPLATE, {
+    var compiledIndexTableHeadings = _.template(INDEX_TABLE_HEADINGS_TEMPLATE)({
         modelAttributeNames: scope.modelAttributeNames,
         id: scope.id,
         modelControllerName: scope.modelControllerName
@@ -236,7 +236,7 @@ module.exports = {
     var INDEX_TABLE_DATA_TEMPLATE = path.resolve(__dirname, './templates/indexTableData.template');
     INDEX_TABLE_DATA_TEMPLATE = fs.readFileSync(INDEX_TABLE_DATA_TEMPLATE, 'utf8');
 
-    var compiledIndexTableData = _.template(INDEX_TABLE_DATA_TEMPLATE, {
+    var compiledIndexTableData = _.template(INDEX_TABLE_DATA_TEMPLATE)({
         modelAttributeNames: scope.modelAttributeNames,
         id: scope.id,
         modelControllerName: scope.modelControllerName,
@@ -261,7 +261,7 @@ module.exports = {
     var INDEX_FOR_EACH_TEMPLATE = path.resolve(__dirname, './templates/indexForEach.template');
     INDEX_FOR_EACH_TEMPLATE = fs.readFileSync(INDEX_FOR_EACH_TEMPLATE, 'utf8');
 
-    var compiledIndexForEach = _.template(INDEX_FOR_EACH_TEMPLATE, {
+    var compiledIndexForEach = _.template(INDEX_FOR_EACH_TEMPLATE)({
       compiledIndexTableData: compiledIndexTableData,
       modelControllerNamePluralized: scope.modelControllerNamePluralized,
       modelControllerName: scope.modelControllerName
@@ -292,7 +292,7 @@ module.exports = {
     var EDIT_FORM_FIELDS_TEMPLATE = path.resolve(__dirname, './templates/editFormFields.template');
     EDIT_FORM_FIELDS_TEMPLATE = fs.readFileSync(EDIT_FORM_FIELDS_TEMPLATE, 'utf8');
 
-    var compiledEditFormFields = _.template(EDIT_FORM_FIELDS_TEMPLATE, {
+    var compiledEditFormFields = _.template(EDIT_FORM_FIELDS_TEMPLATE)({
       modelAttributeNames: scope.modelAttributeNames,
       modelControllerName: scope.modelControllerName
     });
@@ -309,7 +309,7 @@ module.exports = {
     var EDIT_FLASH_TEMPLATE = path.resolve(__dirname, './templates/editFlash.template');
     EDIT_FLASH_TEMPLATE = fs.readFileSync(EDIT_FLASH_TEMPLATE, 'utf8');
 
-    var compiledEditFlash = _.template(EDIT_FLASH_TEMPLATE, {
+    var compiledEditFlash = _.template(EDIT_FLASH_TEMPLATE)({
       modelAttributeNames: scope.modelAttributeNames,
       id: scope.id,
       modelControllerName: scope.modelControllerName
@@ -328,7 +328,7 @@ module.exports = {
     var EDIT_FORM_ACTION_TEMPLATE = path.resolve(__dirname, './templates/editFormAction.template');
     EDIT_FORM_ACTION_TEMPLATE = fs.readFileSync(EDIT_FORM_ACTION_TEMPLATE, 'utf8');
 
-    var compiledEditFormAction = _.template(EDIT_FORM_ACTION_TEMPLATE, {
+    var compiledEditFormAction = _.template(EDIT_FORM_ACTION_TEMPLATE)({
       modelAttributeNames: scope.modelAttributeNames,
       modelControllerName: scope.modelControllerName
     });
@@ -345,7 +345,7 @@ module.exports = {
     var EDIT_SHOW_LINK_TEMPLATE = path.resolve(__dirname, './templates/editShowLink.template');
     EDIT_SHOW_LINK_TEMPLATE = fs.readFileSync(EDIT_SHOW_LINK_TEMPLATE, 'utf8');
 
-    var compiledEditShowLink = _.template(EDIT_SHOW_LINK_TEMPLATE, {
+    var compiledEditShowLink = _.template(EDIT_SHOW_LINK_TEMPLATE)({
       modelAttributeNames: scope.modelAttributeNames,
       id: scope.id,
       modelControllerName: scope.modelControllerName
@@ -375,7 +375,7 @@ module.exports = {
     var ACTION_PARAM_OBJECT_TEMPLATE = path.resolve(__dirname, './templates/actionParamObject.template');
     ACTION_PARAM_OBJECT_TEMPLATE = fs.readFileSync(ACTION_PARAM_OBJECT_TEMPLATE, 'utf8');
 
-    var compliledActionParamObject = _.template(ACTION_PARAM_OBJECT_TEMPLATE, {
+    var compliledActionParamObject = _.template(ACTION_PARAM_OBJECT_TEMPLATE)({
         modelAttributeNames: scope.modelAttributeNames,
         id: scope.id,
         modelControllerName: scope.modelControllerName
@@ -385,7 +385,7 @@ module.exports = {
     var ACTION_UPDATE_PARAM_OBJECT_TEMPLATE = path.resolve(__dirname, './templates/actionUpdateParamObject.template');
     ACTION_UPDATE_PARAM_OBJECT_TEMPLATE = fs.readFileSync(ACTION_UPDATE_PARAM_OBJECT_TEMPLATE, 'utf8');
 
-    var compliledActionUpdateParamObject = _.template(ACTION_UPDATE_PARAM_OBJECT_TEMPLATE, {
+    var compliledActionUpdateParamObject = _.template(ACTION_UPDATE_PARAM_OBJECT_TEMPLATE)({
         modelAttributeNames: scope.modelAttributeNames,
         id: scope.id,
         modelControllerName: scope.modelControllerName
@@ -397,7 +397,7 @@ module.exports = {
     var ACTION_TEMPLATE = path.resolve(__dirname, './templates/action.template');
     ACTION_TEMPLATE = fs.readFileSync(ACTION_TEMPLATE, 'utf8');
 
-    var compliledActions = _.template(ACTION_TEMPLATE, {
+    var compliledActions = _.template(ACTION_TEMPLATE)({
         compliledActionParamObject: compliledActionParamObject,
         compliledActionUpdateParamObject: compliledActionUpdateParamObject,
         id: scope.id,
@@ -410,7 +410,7 @@ module.exports = {
     var HOMEPAGE_EJS_TEMPLATE = path.resolve(__dirname, './templates/homePageEJS.template');
     HOMEPAGE_EJS_TEMPLATE = fs.readFileSync(HOMEPAGE_EJS_TEMPLATE, 'utf8');
 
-    var compliledHomePageEJS = _.template(HOMEPAGE_EJS_TEMPLATE, {});
+    var compliledHomePageEJS = _.template(HOMEPAGE_EJS_TEMPLATE)({});
 
     // This puts erb style delimeters
     compliledHomePageEJS = compliledHomePageEJS.replace(/ERBstart=/g, '<%=')
