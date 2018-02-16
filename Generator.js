@@ -60,7 +60,7 @@ module.exports = {
 
       // $sails generate scaffold user  --> id returns User
       id: _.str.capitalize(scope.args[0]),
-
+      viewDirectoryName: scope.args[0],
       // $sails generate scaffold user  --> modelControllerName returns user
       modelControllerName: scope.args[0],
 
@@ -448,13 +448,13 @@ module.exports = {
 
    './views/homepage.ejs': {template: {templatePath: 'homePage.template', force: true } },
 
-    './views/:id/new.ejs': {template: {templatePath: 'new.template', force: true } },
+    './views/:viewDirectoryName/new.ejs': {template: {templatePath: 'new.template', force: true } },
 
-    './views/:id/show.ejs': {template: {templatePath: 'show.template', force: true } },
+    './views/:viewDirectoryName/show.ejs': {template: {templatePath: 'show.template', force: true } },
 
-    './views/:id/index.ejs': {template: {templatePath: 'index.template', force: true } },
+    './views/:viewDirectoryName/index.ejs': {template: {templatePath: 'index.template', force: true } },
 
-    './views/:id/edit.ejs': {template: {templatePath: 'edit.template', force: true } },
+    './views/:viewDirectoryName/edit.ejs': {template: {templatePath: 'edit.template', force: true } },
 
     './api/policies/flash.js': {template: {templatePath: 'flashPolicy.template', force: true} },
 
