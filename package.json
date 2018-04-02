@@ -1,6 +1,6 @@
 {
   "name": "sails-generate-scaffold",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "sails generate scaffold",
   "main": "Generator.js",
   "scripts": {
@@ -16,8 +16,8 @@
   "author": "Irl Nathan",
   "license": "MIT",
   "dependencies": {
-  	"lodash": ">=2.4.x",
-  	"merge-defaults": ">=0.1.0",
+    "lodash": "^4.17.4",
+    "merge-defaults": ">=0.1.0",
     "underscore.string": "^2.3.3"
   },
   "devDependencies": {
