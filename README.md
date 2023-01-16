@@ -1,6 +1,6 @@
 # sails-generate-scaffold
 
-###**Note:** This module requires Sails **v0.10.0-rc8** or higher.
+**Note:** This module requires Sails **v0.10.0-rc8** or higher.
 
 A `scaffold` generator for use with the Sails command-line interface.  A `scaffold` generates a rudimentary model, CRUD controller actions (e.g. index, new, create, edit, update, and destroy), and corresponding views of a Sails project.   The `scaffold` generator will also create a policy that enables flash messages for errors on the new and edit views. 
 
@@ -44,7 +44,7 @@ The first argument will be the `model` and `controller` name.  You can add any n
 - [#sailsjs on Freenode](http://webchat.freenode.net/) (IRC channel)
 - [Twitter](https://twitter.com/sailsjs)
 - [Professional/enterprise](https://github.com/balderdashy/sails-docs/blob/master/FAQ.md#are-there-professional-support-options)
-- [Tutorials](https://github.com/balderdashy/sails-docs/blob/master/FAQ.md#where-do-i-get-help)
+- [Tutorials](https://github.com/balderdashy/sails-docs/)
 - <a href="http://sailsjs.org" target="_blank" title="Node.js framework for building realtime APIs."><img src="https://github-camo.global.ssl.fastly.net/9e49073459ed4e0e2687b80eaf515d87b0da4a6b/687474703a2f2f62616c64657264617368792e6769746875622e696f2f7361696c732f696d616765732f6c6f676f2e706e67" width=60 alt="Sails.js logo (small)"/></a>
 
 
